@@ -13,12 +13,16 @@
         tools:context=".MainActivity">
 
         <androidx.fragment.app.FragmentContainerView
-            android:id="@+id/fragment_home"
+            android:id="@+id/containerView"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="0dp"
+            app:defaultNavHost="true"
             app:layout_constraintBottom_toTopOf="@id/bot_nav"
-            android:name="com.example.glomadovbottomnavigation.ui.home.HomeFragment"
-            tools:layout="@layout/fragment_home" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navGraph="@navigation/nav_graph" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bot_nav"

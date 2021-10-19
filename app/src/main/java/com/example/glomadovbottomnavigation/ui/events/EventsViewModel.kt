@@ -12,12 +12,11 @@ import java.time.format.DateTimeFormatter
 @RequiresApi(Build.VERSION_CODES.O)
 class EventsViewModel : ViewModel() {
     private val eventsList: MutableLiveData<List<Event>> = MutableLiveData()
-    private var formatter: DateTimeFormatter = DateTimeFormatter.ofPattern("dd-MM-yyyy")
 
     init {
         eventsList.value = EventDataObject.getEvents()
     }
 
     fun getEventList() = eventsList
-    
+
 }

@@ -3,10 +3,9 @@ package com.example.glomadovbottomnavigation.models.event
 import android.os.Build
 import androidx.annotation.RequiresApi
 import java.time.LocalDate
-
+@RequiresApi(Build.VERSION_CODES.O)
 object EventDataObject {
-    @RequiresApi(Build.VERSION_CODES.O)
-    fun getEvents() = listOf(
+    private var eventsList = mutableListOf<Event>(
         Event("1 сентября", "Торжественная линейка", LocalDate.of(2021, 9, 1)),
         Event("Смотрины", "Выступление первокурсников 1го сентября", LocalDate.of(2021, 9, 1)),
         Event("Отличное начало", "Общеуниверский ивент", LocalDate.of(2021, 9, 7)),
@@ -21,4 +20,8 @@ object EventDataObject {
         ),
         Event("Летняя сессия", "Задача: остаться на степухе", LocalDate.of(2022, 6, 3)),
     )
+    fun getEvents() = eventsList
+    fun addEvent(event: Event) {
+        eventsList.add(event)
+    }
 }

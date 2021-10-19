@@ -8,4 +8,6 @@
     <string name="events_title">EVENTS</string>
     <string name="holidays_title">HOLIDAYS</string>
     <string name="home_title">HOME</string>
+    <string name="new_event_hint_title">Title</string>
+    <string name="new_event_hint_description">Description</string>
 </resources>
