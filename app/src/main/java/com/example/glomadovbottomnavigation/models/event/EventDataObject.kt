@@ -3,6 +3,9 @@ package com.example.glomadovbottomnavigation.models.event
 import android.os.Build
 import androidx.annotation.RequiresApi
 import java.time.LocalDate
+import java.util.*
+
+
 @RequiresApi(Build.VERSION_CODES.O)
 object EventDataObject {
     private var eventsList = mutableListOf<Event>(
@@ -20,8 +23,18 @@ object EventDataObject {
         ),
         Event("Летняя сессия", "Задача: остаться на степухе", LocalDate.of(2022, 6, 3)),
     )
+
     fun getEvents() = eventsList
     fun addEvent(event: Event) {
         eventsList.add(event)
+       sortEvents()
+    }
+
+    private fun sortEvents() {
+        eventsList.sortWith(Comparator { x: Event, y: Event ->
+            x.dateStart.compareTo(
+                y.dateStart
+            )
+        })//сортировать тут - не лучшее решение с точки зрения архитектуры, полага, но в viewModel пока не получилось
     }
 }

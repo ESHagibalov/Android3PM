@@ -12,6 +12,12 @@
         <action
             android:id="@+id/action_fragment_home_to_fragment_events"
             app:destination="@id/navigation_events" />
+        <action
+            android:id="@+id/action_navigation_profile_to_fragment_settings"
+            app:destination="@id/fragment_settings" />
+        <action
+            android:id="@+id/action_navigation_profile_to_fragment_about"
+            app:destination="@id/fragment_about" />
     </fragment>
     <fragment android:id="@+id/navigation_holidays"
         android:name="com.example.glomadovbottomnavigation.ui.holidays.HolidaysFragment"
@@ -29,9 +35,18 @@
             app:destination="@id/navigation_holidays" />
     </fragment>
     <fragment android:id="@+id/fragment_add_event"
-        android:name="com.example.glomadovbottomnavigation.ui.events.add.AddEvent"
+        android:name="com.example.glomadovbottomnavigation.ui.events.add.AddEventFragment"
         tools:layout="@layout/fragment_add_event"
         android:label="AddEvent">
-
+    </fragment>
+    <fragment android:id="@+id/fragment_settings"
+        android:name="com.example.glomadovbottomnavigation.ui.settings.SettingsFragment"
+        tools:layout="@layout/fragment_settings"
+        android:label="Settings">
+    </fragment>
+    <fragment android:id="@+id/fragment_about"
+        android:name="com.example.glomadovbottomnavigation.ui.about.AboutFragment"
+        tools:layout="@layout/fragment_about"
+        android:label="About">
     </fragment>
 </navigation>

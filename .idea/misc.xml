@@ -7,10 +7,12 @@
         <entry key="app/src/main/res/drawable/holidays.xml" value="0.22592592592592592" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/event_item.xml" value="0.19701086956521738" />
+        <entry key="app/src/main/res/layout/fragment_about.xml" value="0.20606884057971014" />
         <entry key="app/src/main/res/layout/fragment_add_event.xml" value="0.17028985507246377" />
         <entry key="app/src/main/res/layout/fragment_events.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/fragment_holidays.xml" value="0.21014492753623187" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.21014492753623187" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.20606884057971014" />
         <entry key="app/src/main/res/layout/item_event.xml" value="0.20742753623188406" />
         <entry key="app/src/main/res/menu/bottom_navigation_main.xml" value="0.2953125" />
       </map>

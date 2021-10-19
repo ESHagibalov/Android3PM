@@ -2,21 +2,19 @@ package com.example.glomadovbottomnavigation.ui.events
 
 import android.os.Build
 import androidx.annotation.RequiresApi
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.glomadovbottomnavigation.models.event.Event
 import com.example.glomadovbottomnavigation.models.event.EventDataObject
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
 class EventsViewModel : ViewModel() {
-    private val eventsList: MutableLiveData<List<Event>> = MutableLiveData()
-
+    private val mutableEventsList: MutableLiveData<List<Event>> = MutableLiveData()
+    val eventsList: LiveData<List<Event>> = mutableEventsList
     init {
-        eventsList.value = EventDataObject.getEvents()
-    }
+        mutableEventsList.value = EventDataObject.getEvents()
 
-    fun getEventList() = eventsList
+    }
 
 }

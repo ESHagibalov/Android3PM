@@ -39,7 +39,7 @@ class EventsFragment : Fragment() {
         binding.fabAddEvent.setOnClickListener {
             findNavController().navigate(R.id.action_events_to_add_event)
         }
-        viewModel.getEventList().observe(viewLifecycleOwner, Observer {
+        viewModel.eventsList.observe(viewLifecycleOwner, Observer {
             it?.let {
                 adapter.refreshEvents(it)
             }

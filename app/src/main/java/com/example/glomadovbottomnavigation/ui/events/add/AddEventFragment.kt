@@ -16,7 +16,7 @@ import java.time.LocalDate
 import java.util.*
 
 @RequiresApi(Build.VERSION_CODES.O)
-class AddEvent : Fragment() {
+class AddEventFragment : Fragment() {
 
     private lateinit var binding: FragmentAddEventBinding
     private var event: Event = Event(
@@ -43,7 +43,8 @@ class AddEvent : Fragment() {
             today.get(Calendar.YEAR), today.get(Calendar.MONTH),
             today.get(Calendar.DAY_OF_MONTH)
         ) { view, year, month, day ->
-            event.dateStart = LocalDate.of(year, month, day)
+            event.dateStart = LocalDate.of(year, month, day)//я не знаю почему, но у него
+            // месяц почему-то нумеруется неправильно, номер на 1 меньше реального
             if (event.title != "" && event.desc != "") {
                 binding.btnSave.visibility = View.VISIBLE
             }
@@ -51,7 +52,7 @@ class AddEvent : Fragment() {
 
         binding.etEventTitle.addTextChangedListener {
             event.title = binding.etEventTitle.text.toString()
-            if ( event.desc != ""
+            if (event.desc != ""
             ) {
                 binding.btnSave.visibility = View.VISIBLE
             }
@@ -59,13 +60,15 @@ class AddEvent : Fragment() {
 
         binding.etEventDescription.addTextChangedListener {
             event.desc = binding.etEventTitle.text.toString()
-            if ( event.title != "") {
+            if (event.title != "") {
                 binding.btnSave.visibility = View.VISIBLE
             }
         }
 
         binding.btnSave.setOnClickListener {
-            EventDataObject.addEvent(event)
+            EventDataObject.addEvent(event)//возможно правильнее с точки зрения архитектуры было бы передавать
+            // просто объект event в наш фргмент со списком, а там уже распоряжаться им, или что-то еще
+            // это решение не лучшее, но в пивком потянет
             findNavController().popBackStack()
         }
         return binding.root
